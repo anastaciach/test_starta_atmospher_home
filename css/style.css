@@ -30,9 +30,43 @@
     /* max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
     margin-inline: auto;
     padding-inline: var(--container-padding-x); */
-    margin-inline:260px;
+    margin:0;
+    padding:0 260px;
+    margin-inline: auto;
+    width:100%;
+    /* padding-inline: 260px;
+    max-width: 862px; */
   }
+  @media (max-width: 1919px) {
+    .container{
+        padding:0 84px;
+        max-width: 1198x;
+    }
+  }
+  @media (max-width: 1366px) {
+    .container{
+        padding:0 84px;
+        max-width: 1198x;
+    }
+  }
+  @media (max-width: 1024px) {
+    .container{
+        padding:0 40px;
+        max-width: 944px;
+    }
+  }
+  @media (max-width: 768px) {
+    .container{
+        max-width:688px;
+    }
+  }
+  @media (max-width: 374px) {
+    .container{
+        padding:0 20px;
+        max-width: 374px;
+    }
 
+  }
   .visually-hidden {
     position: absolute !important;
     width: 1px !important;
@@ -90,10 +124,11 @@ h2{
 }
 h3{}
 h4{}
-.container{
-
-}
 .page-header{    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: #f4f4f4 url("../assets/images/image.jpg") no-repeat center center;
     background-size: cover; /* Изображение растягивается, чтобы покрыть весь контейнер */
     border-radius: 40px;
@@ -117,7 +152,7 @@ h4{}
 .header__menu-link{
     display: inline-flex;
     align-items: center;
-    height:34px;
+    /* height:34px; */
     padding: 0 16px 0 16px;
     border-radius:50px;
 }
@@ -133,7 +168,6 @@ h4{}
 .hero__stats-list {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     column-gap: 36px;
 }
 .hero__stats-item{
@@ -144,4 +178,12 @@ h4{}
     backdrop-filter: blur(150px);
     background: rgba(220, 220, 220, 0.6);
     border-radius:50px;
+}
+.hero__logo::after{
+    content: "";
+    display: inline-block;
+    width: 806px;
+    height: 298px;
+    background: url(../assets/images/big_logo.svg) no-repeat center;
+    background-size: contain;
 }
