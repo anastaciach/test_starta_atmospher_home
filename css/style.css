@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Fira Sans';
-    src: url('FiraSans-Regular.woff2') format('woff2');
+    src: url('../assets/fonts/fira_sans/FiraSans-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -8,14 +8,14 @@
 
 @font-face {
     font-family: 'Fira Sans';
-    src: url('FiraSans-Medium.woff2') format('woff2');
+    src: url('../assets/fonts/fira_sans/FiraSans-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Fira Sans';
-    src: url('FiraSans-Regular.woff2') format('woff2');
+    src: url('../assets/fonts/fira_sans/FiraSans-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -23,7 +23,7 @@
 
 @font-face {
     font-family: 'Fira Sans';
-    src: url('FiraSans-Medium.woff2') format('woff2');
+    src: url('../assets/fonts/fira_sans/FiraSans-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -31,7 +31,7 @@
 
 @font-face {
     font-family: 'Gogh Book';
-    src: url('Gogh-Book.woff2') format('woff2');
+    src: url('../assets/fonts/Gogh/Gogh-Book.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -39,7 +39,7 @@
 
 @font-face {
     font-family: 'Gogh';
-    src: url('Gogh-Bold.woff2') format('woff2');
+    src: url('../assets/fonts/Gogh/Gogh-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -47,7 +47,7 @@
 
 @font-face {
     font-family: 'Gogh';
-    src: url('Gogh-Regular.woff2') format('woff2');
+    src: url('../assets/fonts/Gogh/Gogh-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -55,7 +55,7 @@
 
 @font-face {
     font-family: 'Gogh';
-    src: url('Gogh-Medium.woff2') format('woff2');
+    src: url('../assets/fonts/Gogh/Gogh-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -93,34 +93,40 @@
     margin: 0 auto;
     margin-inline: auto;
     max-width: 1402px ;
+    padding-inline: clamp(20px, 3%, 84px);
   }
-  @media (max-width: 1919px) {
+  @media (max-width: 1920px) {
     .container{
         /* padding:0 84px; */
-        max-width: 1198px;
+        max-width: 1402px;
+        /* margin-inline: 259px; */
     }
   }
   @media (max-width: 1366px) {
     .container{
         /* padding:0 84px; */
         max-width: 1198px;
+        /* margin-inline: 84px; */
     }
   }
   @media (max-width: 1024px) {
     .container{
         /* padding:0 40px; */
         max-width: 944px;
+        /* margin-inline: 40px; */
     }
   }
   @media (max-width: 768px) {
     .container{
         max-width:688px;
+        /* margin-inline: 40px; */
     }
   }
   @media (max-width: 374px) {
     .container{
         /* padding:0 20px; */
-        max-width: 374px;
+        max-width: 325px;
+        /* margin-inline: 32px; */
     }
 
   }
@@ -244,17 +250,19 @@ h3{
     border-radius: 40px;
 }
 .header{
-    margin-top:10px
+    margin-top:10px;
+    width: 100%;
+
 }
 .header__inner{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: 50px;
+    /* column-gap: 50px; */
     color:var(--color-text);
     background: var(--color-background);/**/
     border-radius: 160px;
-    padding: 10px 20px;
+    padding: 22px 30px;
     box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.25);
 }
 .header__logo{
@@ -266,7 +274,6 @@ h3{
 .header__menu-list{
     display:flex;
     column-gap:8px;
-    padding: 14px;
     font-weight: 700;
     font-size: 18px;
     line-height: 100%;
@@ -289,6 +296,7 @@ h3{
     align-items: center;
     column-gap: 8px;
     white-space: nowrap;
+    font-size: 18px;
     font-weight: 500;
     line-height: 100%;
 }
@@ -305,7 +313,11 @@ h3{
     backdrop-filter: blur(250px);
     background: rgba(255, 255, 255, 0.3);
   }
-.burger__button::after {
+  .burger__button svg{
+    position: relative;
+    top: 5%;
+  }
+/* .burger__button::after {
     position: absolute;
     content: "";
     top: 50%;
@@ -316,14 +328,14 @@ h3{
     background-color: #fff;
     border-radius: 100px;
     box-shadow: 0 -5px, 0 5px  #fff;;
-}
-.burger-button:hover {
+} */
+.burger__button:hover {
     backdrop-filter: blur(250px);
-background: rgba(255, 255, 255, 0.3);
+background: rgba(134, 7, 7, 0.3);
 }
-.burger-button:active {
-    background-color: var(--color-primary-blue);
-    border-radius: var(--border-radius);
+.burger__button:active {
+    backdrop-filter: blur(250px);
+    background: rgba(255, 255, 255, 0.3);
     transition: all 0.3s;
   }
 .hero__content{
@@ -390,7 +402,11 @@ background: rgba(255, 255, 255, 0.3);
 }
 @media(max-width:1366px){
     .header__inner{
-        padding: 0px 20px;
+        padding: 20px 36px;
+        /* column-gap: 8px; */
+    }
+    .header__menu-link{
+        padding:8px 16px;
     }
     .header__addres,.header__menu-link{
         font-size: 13px;
@@ -410,18 +426,26 @@ background: rgba(255, 255, 255, 0.3);
     }
 }
 @media(max-width:1024px){
+    .header{
+        margin-top:10px;
+    }
     .header__inner{
         background: none;
         box-shadow:none;
         justify-content: space-between;
         color:#fff;
     }
+    
     .hero__stats-number{
         font-size: 30px;
     }
     
     .black-fill {
         fill: #fff ; /* Переопределяем цвет логотипа на белый */
+    }
+    .header__addres{
+        margin-left: auto;
+        margin-right: 24px;
     }
     .header__adress-icon svg path{
         fill:#fff;
@@ -496,8 +520,10 @@ background: rgba(255, 255, 255, 0.3);
 }
 @media(max-width:414px){
     .hero__logo svg{
-        width:326px;
-        height:120px;
+        /* width:326px;
+        height:120px; */
+        width: 300px;
+        height: 100px;
     }
     .hero__stats-item.stats-item--parking,
     .hero__stats-item.stats-item--floors,
@@ -627,8 +653,11 @@ background: rgba(255, 255, 255, 0.3);
 }
 
 .feedback__container {
-    padding: 64px;
+
+}
+.feedback__content{
     background: #fff;
+    padding: 64px;
     border-radius: 70px;
 }
 
@@ -958,7 +987,7 @@ background: rgba(255, 255, 255, 0.3);
     align-items: center;
     font-size: 18px;
     border-radius: 25px;
-    padding: 0px 20px;
+    padding: 12px 20px;
     background: #eae2d8;
     gap:8px;
     border-radius: 316px;
@@ -984,6 +1013,9 @@ background: rgba(255, 255, 255, 0.3);
     .location__item {
         gap: 12px;
     }
+    .location__heading {
+        margin-bottom: 46px;
+    }
 }
 @media (max-width: 1024px) {
     .location {
@@ -993,6 +1025,9 @@ background: rgba(255, 255, 255, 0.3);
     .location__map {
         height: 362px;
         border-radius: 40px;
+    }
+    .location__heading {
+        margin-bottom: 36px;
     }
 }
 @media (max-width: 768px) {
