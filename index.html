@@ -276,7 +276,13 @@
         <div class="feedback__container container">
           <h2 class="feedback__heading">Хотите стать нашим арендатором?</h2>
           <p class="feedback__subheading">Дополнительная информация</p>
-          <form class="feedback__form">
+          <form
+            class="feedback__form"
+            action="/submit"
+            method="post"
+            novalidate
+            data-js-form
+          >
             <div class="feedback__field">
               <label for="name" class="feedback__label">Ваше имя</label>
               <input
@@ -285,7 +291,16 @@
                 name="name"
                 placeholder="Имя"
                 class="feedback__input"
+                required
+                minlength="2"
+                maxlength="50"
+                aria-errormessage="name-errors"
               />
+              <span
+                class="feedback__errors"
+                id="name-errors"
+                data-js-form-field-errors
+              ></span>
             </div>
             <div class="feedback__field">
               <label for="phone" class="feedback__label">Телефон</label>
@@ -295,7 +310,16 @@
                 name="phone"
                 placeholder="+7 (000) 000-00-00"
                 class="feedback__input"
+                required
+                pattern="\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}"
+                title="Формат: +7 (XXX) XXX-XX-XX"
+                aria-errormessage="phone-errors"
               />
+              <span
+                class="feedback__errors"
+                id="phone-errors"
+                data-js-form-field-errors
+              ></span>
             </div>
             <div class="feedback__field">
               <label for="email" class="feedback__label">Эл. почта</label>
@@ -304,8 +328,15 @@
                 id="email"
                 name="email"
                 placeholder="name@email.ru"
-                class="feedback__input feedback__input--error"
+                class="feedback__input"
+                required
+                aria-errormessage="email-errors"
               />
+              <span
+                class="feedback__errors"
+                id="email-errors"
+                data-js-form-field-errors
+              ></span>
             </div>
             <div class="feedback__field feedback__field--full">
               <label for="message" class="feedback__label">Сообщение</label>
@@ -347,5 +378,6 @@
       </form>
       <div class="mobile-overlay__body">MENU</div>
     </dialog>
+    <script src="./js/feedback-form.js"></script>
   </body>
 </html>
