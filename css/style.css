@@ -174,7 +174,7 @@ a:hover{/**/
     color:var(--color-secondary);
 }
 h1,h2,h3,h4{
-    font-weight: 500px;
+    /* font-weight: 500px; */
 }
 h1{
     font-size: 32px;
@@ -680,7 +680,7 @@ h4{}
     }
     .news {
         border-radius:50px ;
-        padding: 46px 0;
+        padding: 46px 46px;
     }
     .news__heading {
         margin-bottom: 36px;
@@ -691,7 +691,7 @@ h4{}
         flex: 0 0 calc(50% - 20px); 
     }
     .news {
-        padding: 36px 0;
+        padding: 36px 36px;
     }
 }
 @media (max-width: 414px) {
@@ -699,6 +699,104 @@ h4{}
         flex: 0 0 calc(80% ); 
     }
     .news {
-        padding: 32px 0;
+        padding: 32px 32px;
     }
 }
+.location {
+    padding: 50px 0;
+    background: url('../assets/images/image3.jpg') no-repeat center center / cover;
+}
+
+
+.location__container {
+    border-radius: 70px;
+    padding: 64px;
+    background: var(--color-background);
+}
+
+.location__heading {
+    font-weight: 700;
+    margin-bottom: 64px;
+}
+
+.location__content {
+    display: flex;
+    gap: 40px;
+}
+
+.location__info {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.location__item {
+    gap: 16px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.location__subtitle {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 25px;
+    padding: 0px 20px;
+    background: #eae2d8;
+    gap:8px;
+    border-radius: 316px;
+}
+.location__subtitle svg{
+    flex-shrink: 0;
+}
+.location__text {
+
+}
+
+.location__map {
+    flex: 1 1 60%;
+    height: 415px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+@media (max-width: 1366px) {
+    .location {
+        padding: 46px;
+    }
+    .location__item {
+        gap: 12px;
+    }
+}
+@media (max-width: 1024px) {
+    .location {
+        padding: 36px;
+    }
+
+    .location__map {
+        height: 362px;
+        border-radius: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .location {
+        padding: 36px;
+    }
+    .location__content{
+        flex-direction: column;
+        justify-content: flex-start; flex: 0 0 calc(33% - 20px); 
+    }
+    .location__info{    }
+    .location__map {
+        height: 232px;
+    }
+}
+@media (max-width: 414px) {
+    .location__map {
+        height: 232px;
+    }
+}
+
+
+
