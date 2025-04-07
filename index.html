@@ -272,7 +272,65 @@
           </div>
         </div>
       </section>
-      <section class="feedback container"></section>
+      <section class="feedback">
+        <div class="feedback__container container">
+          <h2 class="feedback__heading">Хотите стать нашим арендатором?</h2>
+          <p class="feedback__subheading">Дополнительная информация</p>
+          <form class="feedback__form">
+            <div class="feedback__field">
+              <label for="name" class="feedback__label">Ваше имя</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Имя"
+                class="feedback__input"
+              />
+            </div>
+            <div class="feedback__field">
+              <label for="phone" class="feedback__label">Телефон</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+7 (000) 000-00-00"
+                class="feedback__input"
+              />
+            </div>
+            <div class="feedback__field">
+              <label for="email" class="feedback__label">Эл. почта</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="name@email.ru"
+                class="feedback__input feedback__input--error"
+              />
+            </div>
+            <div class="feedback__field feedback__field--full">
+              <label for="message" class="feedback__label">Сообщение</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder=""
+                class="feedback__input feedback__input--textarea"
+              ></textarea>
+            </div>
+            <div class="feedback__footer">
+              <button type="submit" class="feedback__button">
+                Оставить заявку
+              </button>
+              <p class="feedback__note">
+                Нажимая на кнопку, вы даете согласие на обработку персональных
+                данных и соглашаетесь с
+                <a href="#" class="feedback__link"
+                  >политикой конфиденциальности.</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
       <section class="news"></section>
       <section class="location"></section>
     </main>
