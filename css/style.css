@@ -74,11 +74,7 @@
     --color-warning:red;
 
     --color-text:#251a00;
-    --color-text-secondary:;
-    
 
-    --border:;
-    --border-radius:;
     --font-family: "Gogh", sans-serif;
     --second-family: "Fira Sans", sans-serif;
     --padding:24px;
@@ -490,9 +486,7 @@ background: rgba(255, 255, 255, 0.3);
     .hero__stats-list::-webkit-scrollbar {
         display: none;
     }
-    .hero__stats-list {
 
-    }
 }
 @media(max-width:500px){
     .hero__logo svg{
