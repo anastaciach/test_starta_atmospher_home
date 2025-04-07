@@ -564,33 +564,141 @@ h4{}
         padding: 16px 24px;
     }
 }
+/* Секция новостей */
+.news {
+    border-radius: 70px;
+    padding: 100px 0;
+}
+
+.news__container {
+    margin: 0 auto;
+}
+
+.news__heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 64px;
+}
+
+/* Слайдер */
+.news__slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.news__slider-wrapper {
+    display: flex;
+    /* gap:24px; */
+    transition: transform 0.5s ease;
+}
+
+.news__item {
+    flex: 0 0 calc(25% ); /* 3 слайда с учётом отступов */
+    /* margin-right: 24px; */
+
+    overflow: hidden;
+    position: relative;
+    padding: 24px;
+}
+
+.news__item:hover {
+    background: #f8f7f7;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.news__image {
+    width: 100%;
+    height: 302px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    object-fit: cover;
+}
+
+.news__title {
+    font-weight: 500;
+    font-size: 22px;
+    /* Ограничение в 2 строки с многоточием */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Кнопки навигации */
+.news__slider-button {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); */
+    /* transition: background 0.3s ease; */
+}
+
+.news__slider-button:hover {
+    background: #f0f0f0;
+}
+
+.news__slider-button--prev {
+    left: -1%;
+}
+
+.news__slider-button--next {
+    right: -1%;
+}
+
+@media (max-width: 1366px) {
+    .news__item {
+        flex: 0 0 calc(25% ); 
+    }
+    
+    .news__image {
+        width: 252px;
+        height: 186px;
+    }
+    .news {
+        border-radius: 0 0 60px 60px;
+        padding: 14px 0;
+    }
+    .news__heading {
+        margin-bottom: 46px;
+    }
+
+}
+@media (max-width: 1024px) {
+    .news__item {
+        flex: 0 0 calc(33% - 20px); 
+    }
+    .news {
+        border-radius:50px ;
+        padding: 46px 0;
+    }
+    .news__heading {
+        margin-bottom: 36px;
+    }
+}
 @media (max-width: 768px) {
-    /* .feedback__container {
-        padding: 20px;
+    .news__item {
+        flex: 0 0 calc(50% - 20px); 
     }
-
-    .feedback__field {
-        flex: 1 1 100%; /* 1 колонка */
-   /* }*/
-
-    /* .feedback__heading {
-        font-size: 24px;
+    .news {
+        padding: 36px 0;
     }
-
-    .feedback__subheading {
-        font-size: 14px;
+}
+@media (max-width: 414px) {
+    .news__item {
+        flex: 0 0 calc(80% ); 
     }
-
-    .feedback__input {
-        font-size: 14px;
+    .news {
+        padding: 32px 0;
     }
-
-    .feedback__button {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    .feedback__note {
-        font-size: 10px;
-    }  */
 }

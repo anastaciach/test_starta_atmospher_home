@@ -90,3 +90,57 @@ class FormsValidation {
 }
 
 new FormsValidation();
+//Очищение введённого значения от нечисловых символов, а затем форматирование его в нужный вид.
+
+document.addEventListener('DOMContentLoaded', () => {
+    const phoneInput = document.getElementById('phone');
+
+    phoneInput.addEventListener('input', (event) => {
+        let value = event.target.value.replace(/\D/g, ''); // удалить все нечисловые символы
+
+        // Если пользователь ввёл меньше 1 символа, добавляем "+7"
+        if (value.length < 1) {
+            event.target.value = '+7';
+            return;
+        }
+
+        if (value.length > 11) {
+            value = value.slice(0, 11);
+        }
+
+        if (value.length >= 1 && value[0] !== '7') {
+            value = '7' + value.slice(1);
+        }
+
+        let formattedValue = '+7';
+
+        if (value.length > 1) {
+            formattedValue += ' (' + value.slice(1, 4);
+        }
+        if (value.length > 4) {
+            formattedValue += ') ' + value.slice(4, 7);
+        }
+        if (value.length > 7) {
+            formattedValue += '-' + value.slice(7, 9);
+        }
+        if (value.length > 9) {
+            formattedValue += '-' + value.slice(9, 11);
+        }
+
+        event.target.value = formattedValue;
+    });
+
+    // При фокусе, если поле пустое, устанавливаем начальное значение "+7"
+    phoneInput.addEventListener('focus', (event) => {
+        if (!event.target.value) {
+            event.target.value = '+7';
+        }
+    });
+
+    // При потере фокуса, если введено только "+7", очищаем поле
+    phoneInput.addEventListener('blur', (event) => {
+        if (event.target.value === '+7') {
+            event.target.value = '';
+        }
+    });
+});
