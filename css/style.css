@@ -789,13 +789,13 @@ h3 {
   text-decoration: none;
 }
 @media (max-width: 1366px) {
-  .feedback__container {
+  .feedback__content {
     padding: 46px;
     border-radius: 60px;
   }
 }
 @media (max-width: 1024px) {
-  .feedback__container {
+  .feedback__content {
     padding: 36px;
     border-radius: 50px;
   }
@@ -807,18 +807,12 @@ h3 {
   }
 }
 @media (max-width: 768px) {
-  .feedback__container {
-    padding: 36px;
-  }
   .feedback__field {
     flex: 1 1 100%;
   }
   .feedback__footer {
     flex-direction: column;
     font-size: 14px;
-  }
-  .feedback__container {
-    padding: 36px;
   }
 }
 @media (max-width: 414px) {
