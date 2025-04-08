@@ -360,18 +360,20 @@ h3 {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 20px;
+    margin: 12px 24px;
 }
 
 .slider__dot {
-    width: 8px;
-    height: 8px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(146, 140, 128, 0.4);
+    border-radius: 100%;
 }
 
 .slider__dot.active {
-    background: #fff;
+    width: 30px;
+    border-radius: 80px;
+    background: #928c80;;
 }
 
 .hidden-desktop {
@@ -494,7 +496,7 @@ h3 {
         border-radius: 30px;
         padding: 16px;
         flex: 0 0 70%;
-        scroll-snap-align: center; /* Центрируем слайды */
+        scroll-snap-align: center;
         flex: 0 0 calc(50% - 24px); /* Два слайда занимают 100% ширины (50% - половина gap) */
         color:var(--color-secondary);
         backdrop-filter: blur(256px);
@@ -512,16 +514,15 @@ h3 {
     .hero__stats-list {
         position: initial;
         display: flex;
-        overflow-x: auto; /* Включаем горизонтальную прокрутку */
-        scroll-snap-type: x mandatory; /* Прилипание слайдов */
-        -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; 
         gap: 48px;
-        padding: 0 10px; /* Отступы по краям */
+        padding: 0 10px; 
         scroll-behavior: smooth; /* Плавная прокрутка */
     }
-    /* Скрываем полосу прокрутки */
+    
     .hero__stats-list::-webkit-scrollbar {
-        display: none;
+        display: none;/* Скрываем полосу прокрутки */
     }
     .hero__stats-list {
         -ms-overflow-style: none;
@@ -532,10 +533,10 @@ h3 {
 @media (max-width: 414px) {
     
     .hero__stats-item {
-        flex: 0 0 100%; /* Элемент занимает 100% ширины */
+        flex: 0 0 100%; 
     }
     .hero__title {
-        margin-top: 145px; /* Исправлено: "145x" на "145px" */
+        margin-top: 127px; 
     }
 }
 .stores {
@@ -565,6 +566,15 @@ h3 {
 .stores__item:hover {
   cursor: pointer;
 }
+/*????*/
+/* .stores-icon::before {
+    content: "";
+    width: 12px;
+    height: 19px;
+    display: block; 
+    background: url(../assets/icons/stores-icon.svg) no-repeat center;
+    background-size: contain;
+} */
 .stores__title {
   position: absolute;
   bottom: 32px;
@@ -821,6 +831,10 @@ h3 {
 .news {
   border-radius: 70px;
   padding: 100px 0;
+  background:var(--color-background);
+  position: relative;
+  margin-top: -65px; 
+  margin-bottom: -65px;
 }
 
 .news__container {
@@ -961,6 +975,7 @@ h3 {
 
 .location__container {
   border-radius: 70px;
+  margin-top: 100px;
   padding: 64px;
   background: var(--color-background);
 }
@@ -1148,7 +1163,14 @@ h3 {
 .footer__social-link:hover svg {
   opacity: 0.8;
 }
-
+.phone-icon::before {
+    content: "";
+    width: 12px;
+    height: 19px;
+    display: block; 
+    background: url(../assets/icons/phone-icon.svg) no-repeat center;
+    background-size: contain;
+}
 .footer__bottom {
   display: flex;
   justify-content: space-between;
