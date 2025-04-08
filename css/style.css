@@ -87,9 +87,7 @@
   --transition-duration: 0.2s;
 }
 .container {
-  /* max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-    margin-inline: auto;
-    padding-inline: var(--container-padding-x); */
+    width:100%;
   margin: 0 auto;
   margin-inline: auto;
   max-width: 1402px;
@@ -335,205 +333,210 @@ h3 {
   transition: all 0.3s;
 }
 .hero__content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
 .hero__title {
-  margin-top: 177px;
-  color: #ffffff;
+    margin-top: 177px;
+    color: #ffffff;
 }
 
 .hero__logo {
-  margin-top: 30px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 806px;
+    height: auto;
+    display: block;
+}
 
-  width: 100%;
-  max-width: 806px;
-  height: auto;
-  display: block;
+.hero__slider {
+    position: relative;
+    width: 100%; /* Убедимся, что слайдер занимает всю ширину */
 }
-.hero__logo::after {
-  /* content: "";
-    display: inline-block; 
-    width: 806px;
-    height: 298px;
-    background: url(../assets/images/big_logo.svg) no-repeat center;
-    background-size: contain; */
+
+.slider__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
 }
+
+.slider__dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.slider__dot.active {
+    background: #fff;
+}
+
+.hidden-desktop {
+    display: none;
+}
+
 .hero__stats-list {
-  position: relative;
-  top: 75px;
-  display: flex;
-  justify-content: space-between;
-  /* column-gap: 36px; */
-  gap: 50px;
-  margin-top: 167px;
+    position: relative;
+    display: flex;
+    top: 90px;
+    justify-content: space-between;
+    column-gap: 36px;
+    gap: 50px;
+    /* margin-top: 167px; */
+    margin-top: 10%;
 }
 
 .hero__stats-item {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  row-gap: 26px;
-  padding: 26px;
-  backdrop-filter: blur(150px);
-  background: rgba(220, 220, 220, 0.6);
-  border-radius: 40px;
-  flex: 1;
-  text-align: left;
-}
-.hero__stats-item:hover {
-  color: var(--color-secondary);
-  backdrop-filter: blur(256px);
-  background: rgba(255, 255, 255, 0.5), #f0f0f0;
-  cursor: pointer;
-}
-.hero__stats-number {
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 100%;
-}
-@media (max-width: 1920px) {
-  .header__logo img path {
-    fill: #fff;
-  }
-  .header__addres,
-  .header__menu-link {
-    font-size: 16px;
-  }
-}
-@media (max-width: 1366px) {
-    
-  .header__inner {
-    padding: 20px 36px;
-    /* column-gap: 8px; */
-  }
-  .header__menu-link {
-    padding: 8px 16px;
-  }
-  .header__addres,
-  .header__menu-link {
-    font-size: 13px;
-  }
-  .hero__title {
-    margin-top: 138px;
-  }
-  .hero__logo svg {
-    /* width: 574px;
-    height: 212px; */
-  }
-  .hero__stats-item {
-    border-radius: 40px;
-    padding: 32px;
-    /* width: 274px;
-        height: 190px; */
-  }
-  .hero__stats-number {
-    font-size: 40px;
-  }
-}
-@media (max-width: 1024px) {
-  .header {
-    margin-top: 10px;
-  }
-  .header__inner {
-    background: none;
-    box-shadow: none;
-    justify-content: space-between;
-    color: #fff;
-  }
-
-  .hero__stats-number {
-    font-size: 30px;
-  }
-
-  .black-fill {
-    fill: #fff; /* Переопределяем цвет логотипа на белый */
-  }
-  .header__addres {
-    margin-left: auto;
-    margin-right: 24px;
-  }
-  .header__adress-icon svg path {
-    fill: #fff;
-  }
-  .header__addres,
-  .header__menu-link {
-    font-size: 13px;
-  }
-  .hero__title {
-    margin-top: 130px;
-  }
-  .hero__logo svg {
-
-  }
-  .hero__stats-item {
-    border-radius: 30px;
-    padding: 16px;
-  }
-}
-@media (max-width: 768px) {
-  .hero__logo svg {
-
-  }
-  .hero__stats-list {
-    gap: 48px;
-  }
-  .hero__stats-item {
-    border-radius: 30px;
-    padding: 16px;
-    /* width: 209px;
-        height: 130px; */
-    backdrop-filter: blur(256px);
-    background: rgba(255, 255, 255, 0.5), #f0f0f0;
-  }
-  .hero__stats-number {
-    font-size: 26px;
-  }
-  .hero__stats-item.stats-item--floors,
-  .hero__stats-item.stats-item--shops {
-    display: none; /* Скрываем "2 этажа" и "190 магазинов" */
-  }
-  .hero__title {
-    margin-top: 120px;
-  }
-  .header__addres {
-    display: none;
-  }
-  .hero__stats-list {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 0 10px;
-    scroll-behavior: smooth;
-  }
-
-  .hero__stats-item {
-    flex: 0 0 70%;
-    scroll-snap-align: center;
-  }
-
-  .hero__stats-list::-webkit-scrollbar {
-    display: none;
-  }
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 26px;
+    padding: 26px;
+    backdrop-filter: blur(150px);
+    background: rgba(220, 220, 220, 0.6);
+    border-radius: 40px;
+    flex: 1;
+    text-align: left;
+    width: 100%;
 }
+
+.hero__stats-item:hover {
+    color: var(--color-secondary, #EF7723);
+    backdrop-filter: blur(256px);
+    background: #f0f0f0;
+    cursor: pointer;
+    outline: none;
+}
+
+.hero__stats-number {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+}
+
+@media (max-width: 1920px) {
+    .header__logo img path {
+        fill: #fff;
+    }
+    .header__addres,
+    .header__menu-link {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .header__inner {
+        padding: 20px 36px;
+    }
+    .header__menu-link {
+        padding: 8px 16px;
+    }
+    .header__addres,
+    .header__menu-link {
+        font-size: 13px;
+    }
+    .hero__title {
+        margin-top: 138px;
+    }
+    .hero__stats-item {
+        border-radius: 40px;
+        padding: 32px;
+    }
+    .hero__stats-number {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        margin-top: 10px;
+    }
+    .header__inner {
+        background: none;
+        box-shadow: none;
+        justify-content: space-between;
+        color: #fff;
+    }
+    .hero__stats-number {
+        font-size: 30px;
+    }
+    .black-fill {
+        fill: #fff;
+    }
+    .header__addres {
+        margin-left: auto;
+        margin-right: 24px;
+    }
+    .header__adress-icon svg path {
+        fill: #fff;
+    }
+    .header__addres,
+    .header__menu-link {
+        font-size: 13px;
+    }
+    .hero__title {
+        margin-top: 130px;
+    }
+    .hero__stats-item {
+        border-radius: 30px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hidden-desktop {
+        display: flex;
+    }
+    .hero__stats-item {
+        border-radius: 30px;
+        padding: 16px;
+        flex: 0 0 70%;
+        scroll-snap-align: center; /* Центрируем слайды */
+        flex: 0 0 calc(50% - 24px); /* Два слайда занимают 100% ширины (50% - половина gap) */
+        color:var(--color-secondary);
+        backdrop-filter: blur(256px);
+        background: #f0f0f0;
+    }
+    .hero__stats-number {
+        font-size: 26px;
+    }
+    .hero__title {
+        margin-top: 120px;
+    }
+    .header__addres {
+        display: none;
+    }
+    .hero__stats-list {
+        position: initial;
+        display: flex;
+        overflow-x: auto; /* Включаем горизонтальную прокрутку */
+        scroll-snap-type: x mandatory; /* Прилипание слайдов */
+        -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
+        gap: 48px;
+        padding: 0 10px; /* Отступы по краям */
+        scroll-behavior: smooth; /* Плавная прокрутка */
+    }
+    /* Скрываем полосу прокрутки */
+    .hero__stats-list::-webkit-scrollbar {
+        display: none;
+    }
+    .hero__stats-list {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
 @media (max-width: 414px) {
-  .hero__logo svg {
-
-  }
-  .hero__title {
-    margin-top: 145x;
-  }
-  .hero__stats-item.stats-item--parking,
-  .hero__stats-item.stats-item--floors,
-  .hero__stats-item.stats-item--shops {
-    display: none; /* Скрываем всё, кроме "45 тыс. м²" */
-  }
-
-  .hero__stats-item {
-    flex: 0 0 100%; /* Элемент занимает 100% ширины */
-  }
+    
+    .hero__stats-item {
+        flex: 0 0 100%; /* Элемент занимает 100% ширины */
+    }
+    .hero__title {
+        margin-top: 145px; /* Исправлено: "145x" на "145px" */
+    }
 }
 .stores {
   margin-top: 220px;
@@ -755,7 +758,6 @@ h3 {
   border-radius: 90px;
   font-size: 20px;
   text-wrap: nowrap;
-  cursor: pointer;
 }
 
 .feedback__button:hover {

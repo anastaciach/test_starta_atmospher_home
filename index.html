@@ -135,35 +135,6 @@
             type="button"
             onclick="mobileOverlay.showModal()"
           >
-            <!-- <svg
-              width="22"
-              height="23"
-              viewBox="0 0 22 23"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.75 11.177H19.25"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2.75 5.677H19.25"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2.75 16.677H19.25"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg> -->
             <span class="visually-hidden">Open navigation menu</span>
           </button>
         </div>
@@ -174,29 +145,32 @@
           <div class="hero__logo logo">
             <img src="./assets/images/big_logo.svg" />
           </div>
-          <div class="hero__stats-list">
-            <div class="hero__stats-item stats-item--area">
-              <span class="hero__stats-number">45 тыс. м²</span>
-              <span class="hero__stats-description"
-                >общая площадь гипермаркета</span
-              >
+          <div class="hero__slider">
+            <div class="hero__stats-list">
+              <div class="hero__stats-item stats-item--area">
+                <span class="hero__stats-number">45 тыс.м²</span>
+                <span class="hero__stats-description"
+                  >общая площадь гипермаркета</span
+                >
+              </div>
+              <div class="hero__stats-item stats-item--parking">
+                <span class="hero__stats-number">1.5 тыс.</span>
+                <span class="hero__stats-description">парковочных мест</span>
+              </div>
+              <div class="hero__stats-item stats-item--floors">
+                <span class="hero__stats-number">2</span>
+                <span class="hero__stats-description"
+                  >этажа магазинов на любой вкус</span
+                >
+              </div>
+              <div class="hero__stats-item stats-item--shops">
+                <span class="hero__stats-number">190</span>
+                <span class="hero__stats-description"
+                  >магазинов с широким выбором</span
+                >
+              </div>
             </div>
-            <div class="hero__stats-item stats-item--parking">
-              <span class="hero__stats-number">1.5 тыс.</span>
-              <span class="hero__stats-description">парковочных мест</span>
-            </div>
-            <div class="hero__stats-item stats-item--floors">
-              <span class="hero__stats-number">2</span>
-              <span class="hero__stats-description"
-                >этажа магазинов на любой вкус</span
-              >
-            </div>
-            <div class="hero__stats-item stats-item--shops">
-              <span class="hero__stats-number">190</span>
-              <span class="hero__stats-description"
-                >магазинов с широким выбором</span
-              >
-            </div>
+            <div class="slider__dots hidden-desktop"></div>
           </div>
         </div>
       </section>
@@ -914,5 +888,6 @@
     </dialog>
     <script src="./js/feedback-form.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="./js/hero-slider.js"></script>
   </body>
 </html>
